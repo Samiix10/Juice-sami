@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poetsen One', cursive;
+  font-size: 16px;
+  transition: background-color .5s ease;
+  background-image: url(../imges/h2-bg-patton.png);
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #a94b35;
+}
+/* ---------------------------- */
+.one {
+  height: 100vh;
+  width: 100vw;
+}
+.containerSwip{
+  & .swiper{
+    width: 100%;
+    height: 100%;
+  }
+}
+.swiper-wrapper{
+  z-index: 5;
+}
+.swiper-slide{
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+.three{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+z-index: -2;
+}
+.newswap{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.strow,.lemon,.grap,.oran{
+  background-repeat: repeat;
+  background-size: 10%;
+  width: 100%;
+  height: 100%;
+}
+.strow{
+  background-image: url(../imges/Strawberry_-1-removebg-preview.png);
+}
+.lemon{
+  background-image: url(../imges/pngtree-lemon-photography-picture-yellow-color-png-image_3606079-removebg-preview.png);
+}
+.grap{
+  background-image: url(../imges/84ac05010335404ad7d9703908c55fbd-removebg-preview.png);
+}
+.oran
+{
+  background-image: url(../imges/grid13_ae403fc8-6b94-409c-b5d8-740a710703b3.webp);
+}
+.swiper-button-prev,.swiper-button-next{
+  top: 110%;
+color: white;
+background-color: rgba(121, 75, 75, 0.164);
+padding: 1.5rem;
+backdrop-filter: blur(.5rem);
+}
+.swiper-button-next:after,
+.swiper-button-prev:after{
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+@media (width < 700px) {
+  .swiper-button-prev,
+    .swiper-button-next {
+      top: 90%;
+    }
+}

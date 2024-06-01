@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fruits</title>
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <link rel="stylesheet" href="style/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+  <section class="one">
+    <div class="conatiner-fluid position-relative d-flex justify-content-center align-items-center w-100 h-100">
+      <div class="containerSwip w-50 h-50 d-flex justify-content-center align-items-center">
+        <div class="swiper d-flex justify-content-center align-items-center ">
+          <div class="swiper-wrapper position-relative ">
+            <div class="swiper-slide" data-color="#a94b35">
+              <img src="imges/h6-img-3-1.png" alt="">
+            </div>
+            <div class="swiper-slide" data-color="#bfb771">
+              <img src="imges/h6-img-4 (1).png" alt="">
+            </div>
+            <div class="swiper-slide" data-color="#151b3b">
+              <img src="imges/h6-img-5 (1).png" alt="">
+            </div>
+            <div class="swiper-slide" data-color="#b85f17">
+              <img src="imges/h6-img-6.png" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="two">
+  </section>
+<section class="three">
+  <div class="container-fluid p-0 m-0">
+    <div class="newswap">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="strow p-0 m-0">
+          </div>
+        </div>
+        <div class="swiper-slide"><div class="lemon m-0 p-0">
+        </div></div>
+        <div class="swiper-slide"><div class="grap m-0 p-0">
+        </div></div>
+        <div class="swiper-slide"><div class="oran m-0 p-0"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      slidePerView: 1,
+      loop:true,
+      allowTouchMove:false,
+      watchOverflow: false,
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      autoplay: {
+        delay: 5000,
+      },
+      speed: 500,
+      effect: 'flip',
+      flipEffect: {
+        slideShadows: false,
+        limitRotation: false,
+        shadow: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false,
+      },
+    });
+      const sw = document.querySelectorAll(".swiper-slide")
+        console.log(sw)
+        swiper.on('slideChangeTransitionEnd', function () {
+            sw.forEach(function (e) {
+              if (e.classList.contains("swiper-slide-active")) {
+                console.log(e.dataset)
+                document.body.style.backgroundColor = e.dataset.color;
+              }
+            })
+          });
+          swiper.on('slideNextTransitionEnd', function () {
+            neW.slideNext()
+            // neW.setTransition(ease)
+          });
+          swiper.on('slidePrevTransitionEnd', function () {
+            neW.slidePrev()
+          });
+          // swiper.on('slideResetTransitionEnd', function () {
+          //   neW.slideNext()
+          // });
+
+          const neW = new Swiper(".newswap",{
+            direction: 'vertical',
+            loop: true,
+            effect:"fade",
+            speed: 500,
+            fadeEffect: {
+              crossFade: true,
+            }
+          })
+  </script>
+</body>
+</html>
