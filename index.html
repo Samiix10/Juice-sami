@@ -84,11 +84,10 @@
       },
     });
       const sw = document.querySelectorAll(".swiper-slide")
-        console.log(sw)
         swiper.on('slideChangeTransitionEnd', function () {
             sw.forEach(function (e) {
               if (e.classList.contains("swiper-slide-active")) {
-                console.log(e.dataset)
+                //console.log(e.dataset)
                 document.body.style.backgroundColor = e.dataset.color;
               }
             })
